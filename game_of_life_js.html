@@ -30,7 +30,6 @@ var matrixSize=10; //init matrix size
 function selectMatrixSize() {
     var e = document.getElementById("ddlViewBy");
     matrixSize = e.options[e.selectedIndex].value;
-    console.log(matrixSize);
 }
 
 function initGameArr(matrixSize) { //fill game matrix array and draw rect to canvas
@@ -55,8 +54,6 @@ function initGameArr(matrixSize) { //fill game matrix array and draw rect to can
 function checkNeighbourDoa(arr) { //check how many dead/alive cells each cell has
     var arrLen=arr.length;
     var liveNeighbours=0;
-
-    console.log("checkdoa() arlen",arrLen);
 
     var doa={};
     doa["alive"]=[];
@@ -198,7 +195,7 @@ var game = {
     	clearInterval(this.interval);
     },
     reset : function() {
-        this.stop()
+        this.stop();
     	initGameArr(matrixSize);
     }
 }
